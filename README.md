@@ -1,65 +1,50 @@
-📚 Library Management System (Python)
+class Library:
+    def __init__(self):
+        self.books=["\nmath","physics","chemistery","English"]
 
-A simple Library Management System built using Python and Object-Oriented Programming (OOP) concepts. This project is designed for learning and practicing Python fundamentals through a menu-driven application
+    def display_book(self):
+        for book in self.books:
+            print(book)
 
-🚀 Features
+    def borrow_book(self):
+        user_book=input(" select book ")
+        if user_book not in self.books:
+            print(" book not find ")
+        else:
+            self.books.remove(user_book)
+            print(f" {user_book} issued succesfully ")
 
-- 📖 Display all available books
-- 📚 Borrow a book
-- 🔄 Return a book
-- ➕ Add a new book
-- 🖥️ Simple menu-driven interface
+    def return_book(self):
+        return_book=input(" return book ")
+        if return_book in self.books:
+            print("\n This book is already exits")
+        else:
+            self.books.append(return_book)
+            print(" book returned succesfully")
 
-🛠️ Technologies Used
+    def add_book(self):
+        add_books=input(" add book.")
+        if add_books in self.books:
+            print(" this book is already exits")
+        else:
+            self.books.append(add_books)
+            print("book addeed succesfully")
 
-- Python 3
-- Object-Oriented Programming (OOP)
+a=Library()
 
-📂 Project Structure
+while True:
+    print("Menu-system\n1.Show all books\n2.Borrow book\n3.Return book\n4.Add new book\n0.for quit")
 
-library-management-system/
-│── main.py
-│── README.md
+    choice=input("select the choice--")
 
-▶️ How to Run
+    if choice=="1":
+        a.display_book()
+    elif choice=="2":
+        a.borrow_book()
+    elif choice=="3":
+        a.return_book()
+    elif choice=="4":
+        a.add_book()
+    elif choice=="0":
+        break
 
-1. Clone the repository:
-   
-   git clone <your-repository-url>
-
-2. Navigate to the project folder:
-   
-   cd library-management-system
-
-3. Run the program:
-   
-   python main.py
-
-📚 Concepts Practiced
-
-- Classes and Objects
-- Constructors ("__init__")
-- Instance Methods
-- Lists
-- Loops
-- Conditional Statements
-- User Input Handling
-
-🎯 Future Improvements
-
-- Book ID system
-- User authentication
-- File-based data storage
-- Search functionality
-- GUI using Tkinter
-- Database integration (SQLite/MySQL)
-
-🤝 Contributions
-
-Suggestions and improvements are always welcome. Feel free to fork the repository and submit a pull request.
-
-👨‍💻 Author
-
-Prajum Patel
-
-Learning Python and building projects one step at a time. 🚀
